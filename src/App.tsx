@@ -1,4 +1,3 @@
-import React from "react";
 import Pokegame from "./Pokegame";
 
 /** Main App component. */

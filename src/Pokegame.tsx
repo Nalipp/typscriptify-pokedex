@@ -1,7 +1,7 @@
-import React from "react";
 import Pokedex from "./Pokedex";
+import { IPokemon } from "./interfaces";
 
-const defaultPokemon: Pokemon[] = [
+const defaultPokemon: IPokemon[] = [
   { id: 4, name: "Charmander", type: "fire", base_experience: 62 },
   { id: 7, name: "Squirtle", type: "water", base_experience: 63 },
   { id: 11, name: "Metapod", type: "bug", base_experience: 72 },
@@ -14,7 +14,7 @@ const defaultPokemon: Pokemon[] = [
 
 /** Return sum of experience in hand. */
 
-function sumExperience(hand: Pokemon[]): number {
+function sumExperience(hand: IPokemon[]): number {
   return hand.reduce((exp, pokemon) => exp + pokemon.base_experience, 0);
 }
 
@@ -24,25 +24,19 @@ function sumExperience(hand: Pokemon[]): number {
  * - pokemon (list of pokemon to use; defaults to default list)
  **/
 
-interface Pokemon { 
-  id: number;
-  name: string;
-  type: string;
-  base_experience: number;
-}
 
 interface PokegameProps {
-  pokemon?: Pokemon[]
+  pokemon?: IPokemon[]
 }
 
 function Pokegame({ pokemon=defaultPokemon }: PokegameProps) {
-  const hand1: Pokemon[] = [];
-  const hand2: Pokemon[] = [...pokemon];
+  const hand1: IPokemon[] = [];
+  const hand2: IPokemon[] = [...pokemon];
 
   // move random cards from hand2 until the hands have the same number of cards
   while (hand1.length < hand2.length) {
     const randIdx: number = Math.floor(Math.random() * hand2.length);
-    const randPokemon: Pokemon = hand2.splice(randIdx, 1)[0];
+    const randPokemon: IPokemon = hand2.splice(randIdx, 1)[0];
     hand1.push(randPokemon);
   }
 
@@ -50,10 +44,10 @@ function Pokegame({ pokemon=defaultPokemon }: PokegameProps) {
   const exp2: number = sumExperience(hand2);
 
   return (
-      <div>
-        <Pokedex pokemon={hand1} exp={exp1} isWinner={exp1 > exp2} />
-        <Pokedex pokemon={hand2} exp={exp2} isWinner={exp2 > exp1} />
-      </div>
+    <div>
+      <Pokedex pokemon={hand1} expTotal={exp1} isWinner={exp1 > exp2} />
+      <Pokedex pokemon={hand2} expTotal={exp2} isWinner={exp2 > exp1} />
+    </div>
   );
 }
 
