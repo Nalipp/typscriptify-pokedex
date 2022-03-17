@@ -1,0 +1,30 @@
+{
+  "name": "pokedex",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.21",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.13",
+    "react": "*",
+    "react-dom": "*",
+    "react-scripts": "*",
+    "typescript": "^4.6.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
