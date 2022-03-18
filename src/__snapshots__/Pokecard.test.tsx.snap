@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pokecard component matches snapshot 1`] = `
+<div>
+  <div
+    class="Pokecard"
+  >
+    <div
+      class="Pokecard-title"
+    >
+      Charmander
+    </div>
+    <img
+      alt="Charmander"
+      class="Pokecard-image"
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+    />
+    <div
+      class="Pokecard-data"
+    >
+      Type: 
+      fire
+    </div>
+    <div
+      class="Pokecard-data"
+    >
+      EXP: 
+      62
+    </div>
+  </div>
+</div>
+`;

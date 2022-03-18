@@ -30,6 +30,7 @@ interface PokegameProps {
 }
 
 function Pokegame({ pokemon=defaultPokemon }: PokegameProps) {
+  console.log('pokemon...', pokemon); 
   const hand1: IPokemon[] = [];
   const hand2: IPokemon[] = [...pokemon];
 
